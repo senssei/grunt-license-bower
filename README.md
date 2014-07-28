@@ -1,47 +1,80 @@
 # grunt-license-bower [![Build Status](https://secure.travis-ci.org/senssei/grunt-license-bower.png?branch=master)](http://travis-ci.org/senssei/grunt-license-bower)
 
+[![Dependency Status](https://gemnasium.com/senssei/grunt-license-bower.svg)](https://gemnasium.com/senssei/grunt-license-bower) 
+
+[![Code Climate](https://codeclimate.com/github/senssei/grunt-license-bower.png)](https://codeclimate.com/github/senssei/grunt-license-bower)
+
+
 > Generate a list of licenses used within a project based on bower.json.
 
 
 ## Getting Started
+This plugin requires Grunt `~0.4.1`
 
-Install the module with: `npm install grunt-license-bower`
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+```shell
+npm install grunt-license --save-dev
+```
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-var grunt-license-bower = require('grunt-license-bower');
-grunt-license-bower.awesome(); // "awesome"
+grunt.loadNpmTasks('grunt-license');
 ```
 
-Install with cli command
+## The "license" task
 
-```sh
-$ npm install -g grunt-license-bower
-$ grunt-license-bower --help
-$ grunt-license-bower --version
+### Overview
+In your project's Gruntfile, add a section named `license` to the data object passed into `grunt.initConfig()`.
+
+```js
+grunt.initConfig({
+  license: {
+    options: {
+      // Task-specific options go here.
+    },
+    your_target: {
+      // Target-specific file lists and/or options go here.
+    },
+  },
+})
 ```
 
+### Options
 
-```sh
-# creates a browser.js
-$ grunt browserify
-```
+#### options.unknown
+Type: `Boolean`
+Default value: `false`
 
+Only generate a list of unknown licenses (as opposed to all)
 
+#### options.start
+Type: `String`
+Default value: `.`
 
-## Documentation
+Project directory from which to start the search
 
-_(Coming soon)_
+#### options.depth
+Type: `Number`
+Default Value: `1`
 
+How deep to search for dependencies.  Setting value to `null` will recurse through all.
 
-## Examples
+#### options.include
+Type: `String` or `Array`
+Default Value: `all`
 
-_(Coming soon)_
+The types of dependencies to include, such as: `["dependencies", "devDependencies", "peerDependencies"]`.
 
+#### options.output
+Type: `String`
+Default Value: `LICENSES`
+
+The path/filename to write the metadata to (WIP: should eventually output the actual licenses)
 
 ## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
-
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## License
 
