@@ -1,4 +1,5 @@
 # grunt-license-bower [![Build Status](https://secure.travis-ci.org/senssei/grunt-license-bower.png?branch=master)](http://travis-ci.org/senssei/grunt-license-bower)
+[![NPM version](https://badge.fury.io/js/grunt-license-bower.svg)](http://badge.fury.io/js/grunt-license-bower)
 
 [![Dependency Status](https://gemnasium.com/senssei/grunt-license-bower.svg)](https://gemnasium.com/senssei/grunt-license-bower) 
 
