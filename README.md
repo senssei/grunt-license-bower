@@ -14,13 +14,19 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-license --save-dev
+npm install grunt-license-bower --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-license');
+grunt.loadNpmTasks('grunt-license-bower');
+```
+
+or load grunt tasks automatically
+  
+```js
+require('load-grunt-tasks')(grunt);
 ```
 
 ## The "license" task
@@ -43,29 +49,11 @@ grunt.initConfig({
 
 ### Options
 
-#### options.unknown
-Type: `Boolean`
-Default value: `false`
-
-Only generate a list of unknown licenses (as opposed to all)
-
-#### options.start
+#### options.directory
 Type: `String`
-Default value: `.`
+Default Value: `bower_components`
 
-Project directory from which to start the search
-
-#### options.depth
-Type: `Number`
-Default Value: `1`
-
-How deep to search for dependencies.  Setting value to `null` will recurse through all.
-
-#### options.include
-Type: `String` or `Array`
-Default Value: `all`
-
-The types of dependencies to include, such as: `["dependencies", "devDependencies", "peerDependencies"]`.
+The path in which installed components should be saved. If not specified this defaults to bower_components.
 
 #### options.output
 Type: `String`

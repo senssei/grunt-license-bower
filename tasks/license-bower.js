@@ -20,10 +20,7 @@
     	var done = this.async();
 
     	var defaults = {
-    		start: '.',
-    		unknown: false,
-    		depth: 1,
-    		include: 'all',
+    		directory: 'bower_components',
     		output: 'LICENSES'
     	};
     	var options = grunt.util._.extend(defaults, this.data);
