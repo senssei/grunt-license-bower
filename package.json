@@ -1,7 +1,7 @@
 {
   "name": "grunt-license-bower",
   "version": "0.0.0",
-  "main": "lib/grunt-license-bower.js",
+  "main": "tasks/license-bower.js",
   "description": "Generate a list of licenses used within a project based on bower.json.",
   "homepage": "https://github.com/senssei/grunt-license-bower",
   "bugs": "https://github.com/senssei/grunt-license-bower/issues",
@@ -21,9 +21,9 @@
   "keywords": [
     "grunt-license-bower",
     "license",
-    " bower",
-    " grunt",
-    " list"
+    "bower",
+    "grunt",
+    "list"
   ],
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
@@ -37,5 +37,9 @@
   "scripts": {
     "test": "grunt",
     "browser": "browserify lib/grunt-license-bower.js > browser.js"
+  },
+  "dependencies": {
+    "bower-license": "^0.2.2",
+    "colors": "^0.6.2"
   }
 }

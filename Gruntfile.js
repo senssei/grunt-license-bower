@@ -39,7 +39,15 @@ module.exports = function (grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'nodeunit']
       }
-    }
+    },
+    license: {
+      options: {
+        // Task-specific options go here.
+      },
+      your_target: {
+        // Target-specific file lists and/or options go here.
+      },
+    },
   });
 
   // Default task.
