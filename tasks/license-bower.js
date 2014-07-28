@@ -8,8 +8,7 @@
 
  'use strict';
 
- var colors = require('colors'),
- fs = require('fs'),
+ var fs = require('fs'),
  license = require('bower-license');
 
  module.exports = function(grunt){
@@ -20,8 +19,6 @@
     grunt.registerMultiTask('license', 'Generates list of bower licenses for your project', function() {
     	var done = this.async();
 
-        var pathToPackage = '.';
-
     	var defaults = {
     		start: '.',
     		unknown: false,
@@ -31,7 +28,7 @@
     	};
     	var options = grunt.util._.extend(defaults, this.data);
 
-    	license.init(options, pathToPackage, function(data){
+    	license.init(options, function(data){
             if (options.output) {
                 fs.writeFileSync(options.output, JSON.stringify(data, null, 4));
                 console.log('Successfully written '.green + options.output.grey);

@@ -8,9 +8,6 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    nodeunit: {
-      files: ['test/**/*_test.js']
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -20,7 +17,7 @@ module.exports = function (grunt) {
         src: 'Gruntfile.js'
       },
       lib: {
-        src: ['lib/**/*.js']
+        src: ['tasks/**/*.js']
       },
       test: {
         src: ['test/**/*.js']
@@ -40,16 +37,24 @@ module.exports = function (grunt) {
         tasks: ['jshint:test', 'nodeunit']
       }
     },
-    license: {
-      options: {
-        // Task-specific options go here.
-      },
-      your_target: {
-        // Target-specific file lists and/or options go here.
-      },
+    // Before generating any new files, remove any previously-created files.
+    clean: {
+        tests: ['tmp']
+    },
+    // Unit tests.
+    simplemocha: {
+        options: {
+            globals: ['should'],
+            timeout: 3000,
+            ignoreLeaks: true,
+            ui: 'bdd',
+            reporter: 'spec'
+        },
+        all: {src: ['test/*.spec.js']}
     },
   });
 
+ grunt.registerTask('test', ['clean', 'simplemocha']);
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['jshint', 'test']);
 };

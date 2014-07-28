@@ -1,7 +1,4 @@
-'use strict';
-
-var gruntLicenseBower = require('../lib/grunt-license-bower.js');
-
+/* global describe, it */
 describe('#license', function(){
     'use strict';
     it('should exist', function(){
