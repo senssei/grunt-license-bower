@@ -9,12 +9,11 @@
  'use strict';
 
  var fs = require('fs'),
- license = require('bower-license');
+ license = require('bower-license'),
+ colors = require('colors'),
+ _ = require('lodash');
 
  module.exports = function(grunt){
-
-	// Please see the Grunt documentation for more information regarding task
-    // creation: http://gruntjs.com/creating-tasks
 
     grunt.registerMultiTask('license', 'Generates list of bower licenses for your project', function() {
     	var done = this.async();
@@ -23,7 +22,8 @@
     		directory: 'bower_components',
     		output: 'LICENSES'
     	};
-    	var options = grunt.util._.extend(defaults, this.data);
+        
+    	var options = _.extend(defaults, this.data);
 
     	license.init(options, function(data){
             if (options.output) {
@@ -31,7 +31,7 @@
                 console.log('Successfully written '.green + options.output.grey);
             }
             done();
-    	});	
+        });	
     });
 
 };
