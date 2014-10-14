@@ -38,11 +38,11 @@ In your project's Gruntfile, add a section named `license` to the data object pa
 ```js
 grunt.initConfig({
   license: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
       // Target-specific file lists and/or options go here.
+      options: {
+      // Target-specific options go here.
+  	  },
     },
   },
 })
@@ -60,7 +60,7 @@ The path in which installed components should be saved. If not specified this de
 Type: `String`
 Default Value: `LICENSES`
 
-The path/filename to write the metadata to (WIP: should eventually output the actual licenses)
+The path/filename to write the metadata to.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

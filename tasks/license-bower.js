@@ -13,25 +13,21 @@
 
  module.exports = function(grunt){
 
-	// Please see the Grunt documentation for more information regarding task
-    // creation: http://gruntjs.com/creating-tasks
+  grunt.registerMultiTask('license', 'Generates list of bower licenses for your project', function() {
+    var done = this.async();
 
-    grunt.registerMultiTask('license', 'Generates list of bower licenses for your project', function() {
-    	var done = this.async();
-
-    	var defaults = {
-    		directory: 'bower_components',
-    		output: 'LICENSES'
-    	};
-    	var options = grunt.util._.extend(defaults, this.data);
-
-    	license.init(options, function(data){
-            if (options.output) {
-                fs.writeFileSync(options.output, JSON.stringify(data, null, 4));
-                console.log('Successfully written '.green + options.output.grey);
-            }
-            done();
-    	});	
+    var options = this.options({
+     directory: 'bower_components',
+     output: 'LICENSES'
     });
+
+    license.init(options, function(data){
+      if (options.output) {
+        fs.writeFileSync(options.output, JSON.stringify(data, null, 4));
+        console.log('Successfully written '.green + options.output.grey);
+      }
+      done();
+    });
+  });
 
 };
