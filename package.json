@@ -1,6 +1,6 @@
 {
   "name": "grunt-license-bower",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "tasks/license-bower.js",
   "description": "Generate a list of licenses used within a project based on bower.json.",
   "homepage": "https://github.com/senssei/grunt-license-bower",
@@ -31,9 +31,9 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-simple-mocha": "^0.4.0",
-    "jshint-stylish": "^0.2.0",
-    "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^1.0.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "bower-license": "^0.2.2",
-    "colors": "^0.6.2"
+    "colors": "^1.0.3"
   }
 }
