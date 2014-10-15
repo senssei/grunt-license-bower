@@ -1,6 +1,6 @@
 {
   "name": "grunt-license-bower",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "tasks/license-bower.js",
   "description": "Generate a list of licenses used within a project based on bower.json.",
   "homepage": "https://github.com/senssei/grunt-license-bower",
