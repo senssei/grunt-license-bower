@@ -37,14 +37,16 @@ In your project's Gruntfile, add a section named `license` to the data object pa
 
 ```js
 grunt.initConfig({
-  license: {
-    your_target: {
+	license: {
+      your_target: {
       // Target-specific file lists and/or options go here.
-      options: {
-      // Target-specific options go here.
-  	  },
+        options: {
+        // Target-specific options go here.
+           directory: 'bower_components',
+           output: 'LICENSES'
+        },
+      },
     },
-  },
 })
 ```
 
